@@ -1115,7 +1115,8 @@ GooseReceiver_startThreadless(GooseReceiver self)
         self->ethSocket = Ethernet_createSocket(self->interfaceId, NULL);
 
     if (self->ethSocket != NULL) {
-        Ethernet_setProtocolFilter(self->ethSocket, ETH_P_GOOSE);
+        // fix vlan error
+        // Ethernet_setProtocolFilter(self->ethSocket, ETH_P_GOOSE);
 
         /* set multicast addresses for subscribers */
         Ethernet_setMode(self->ethSocket, ETHERNET_SOCKET_MODE_MULTICAST);

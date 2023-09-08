@@ -254,7 +254,8 @@ SVReceiver_startThreadless(SVReceiver self)
 
     if (self->ethSocket) {
 
-        Ethernet_setProtocolFilter(self->ethSocket, ETH_P_SV);
+        // fix vlan error
+        // Ethernet_setProtocolFilter(self->ethSocket, ETH_P_SV);
 
         self->running = true;
     }
